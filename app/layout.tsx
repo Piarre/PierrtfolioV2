@@ -12,16 +12,7 @@ import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Pierre IDE",
-  description: "a 16 yo french dev.",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -30,6 +21,10 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        <title>Pierre IDE</title>
+        <meta name="description" content="a 16 yo french dev." />
+      </head>
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
@@ -49,8 +44,8 @@ export default function RootLayout({
           }  transition-opacity delay-700 duration-1000 ease-in-out`}
         ></div>
 
-          <ThemeContextProvider>
-            <ActiveSectionContextProvider>
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
             <Header />
             {children}
             <Footer />
