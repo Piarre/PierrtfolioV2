@@ -2,7 +2,7 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
+import { skillIconsData, skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 
@@ -24,16 +24,12 @@ export default function Skills() {
   const { ref } = useSectionInView("Skills");
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-    >
+    <section id="skills" ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">
       <SectionHeading>My skills &amp; knowledges</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
+      <ul className="flex flex-wrap justify-center gap-4 text-lg text-gray-800">
+        {skillIconsData.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-[#242938] dark:text-white/80"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -43,7 +39,7 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {skill}
+            <motion.img src={`https://skillicons.dev/icons?i=${skill}&theme=dark`} />
           </motion.li>
         ))}
       </ul>

@@ -14,10 +14,10 @@ export const links = [
     name: "About",
     hash: "#about",
   },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
+  // {
+  //   name: "Projects",
+  //   hash: "#projects",
+  // },
   {
     name: "Skills",
     hash: "#skills",
@@ -44,16 +44,14 @@ export const experiencesData = [
   {
     title: "Front-End Developement",
     location: "Paris, FR",
-    description:
-      "Early 2020, I started learning Vue.js to start real Front-End development.",
+    description: "Early 2020, I started learning Vue.js to start real Front-End development.",
     icon: React.createElement(CgWorkAlt),
     date: "2020",
   },
   {
     title: "More Front-End and Back-End Development",
     location: "Paris, FR",
-    description:
-      "At the beginning of 2021, I started learning Java and Angular to create Full-Stack apps.",
+    description: "At the beginning of 2021, I started learning Java and Angular to create Full-Stack apps.",
     icon: React.createElement(FaReact),
     date: "2021",
   },
@@ -117,4 +115,39 @@ export const skillsData = [
   "MySQL",
   "Firebase",
   "Postman",
+] as const;
+
+export const skillIconsData = [
+  "typescript",
+  "javascript",
+  "python",
+  "java",
+  "go",
+  "swift",
+  "powershell",
+  "bash",
+  "spring",
+  "vite",
+  "react",
+  "nextjs",
+  "tailwind",
+  "nodejs",
+  "vscode",
+  "visualstudio",
+  "ae",
+  "idea",
+  "androidstudio",
+  "blender",
+  "github",
+  "git",
+  "discord",
+  "bots",
+  "docker",
+  "electron",
+  "express",
+  "prisma",
+  "mongodb",
+  "mysql",
+  "firebase",
+  "postman",
 ] as const;

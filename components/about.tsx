@@ -18,7 +18,7 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-2">
+      <p className="mb-2 text-3xl">
         {/* <span className="font-medium">Accounting</span>, I decided to pursue my */}
         I'm a 16 year old student from France, I'm currently in High School (Lycée) 
       </p>

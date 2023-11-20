@@ -58,11 +58,11 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-5xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Pierre.</span> I'm a{" "}
+        <span className="font-bold text">Hello, I'm Pierre.</span> I'm a{" "}
         <span className="font-bold">
           {dayjs("2007-04-20").diff(
             `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`,
@@ -73,7 +73,7 @@ export default function Intro() {
         french dev with <span className="font-bold">4 years</span> of
         experience. I like to build <span className="italic">sites & apps</span>{" "}
         that don't exist. <br /> My current focus is{" "}
-        <span className="underline">Swift</span>.
+        <span className="underline italic">None</span>.
       </motion.h1>
 
       <motion.div
