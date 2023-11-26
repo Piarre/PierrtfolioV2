@@ -62,3 +62,15 @@ export function useTheme() {
 
   return context;
 }
+
+export function getTheme() {
+  const localTheme = window.localStorage.getItem("theme") as Theme | null;
+
+  if (localTheme) {
+    return localTheme;
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  } else {
+    return "light";
+  }
+}
