@@ -147,6 +147,7 @@ export const skillIconsData = [
   "express",
   "prisma",
   "mongodb",
+  "linux",
   "mysql",
   "firebase",
   "postman",
