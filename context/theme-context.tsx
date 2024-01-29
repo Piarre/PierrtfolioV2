@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, createContext, useContext } from "react";
 
-type Theme = "dark";
+type Theme = "light" | "dark";
 
 type ThemeContextProviderProps = {
   children: React.ReactNode;
@@ -18,12 +18,18 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
-  const setDarkTheme = () => {
-    setTheme("dark");
-    window.localStorage.setItem("theme", "dark");
-    document.documentElement.classList.add("dark");
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+      window.localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      window.localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   useEffect(() => {
@@ -45,7 +51,7 @@ export default function ThemeContextProvider({
     <ThemeContext.Provider
       value={{
         theme,
-        toggleTheme: setDarkTheme,
+        toggleTheme,
       }}
     >
       {children}
@@ -61,16 +67,4 @@ export function useTheme() {
   }
 
   return context;
-}
-
-export function getTheme() {
-  const localTheme = window.localStorage.getItem("theme") as Theme | null;
-
-  if (localTheme) {
-    return localTheme;
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    return "dark";
-  } else {
-    return "light";
-  }
 }
