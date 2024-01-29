@@ -2,16 +2,17 @@
 
 import Header from "@/components/header";
 import "./globals.css";
-import { DM_Sans, Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-const dmsans = DM_Sans({ subsets: ["latin"], weight: ["700"] });
+const dmsans = DM_Sans({
+  subsets: ["latin"],
+  weight: "700",
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);

@@ -16,6 +16,7 @@ export const sendEmail = async (formData: FormData) => {
       error: "Invalid sender email",
     };
   }
+
   if (!validateString(message, 5000)) {
     return {
       error: "Invalid message",
@@ -25,7 +26,7 @@ export const sendEmail = async (formData: FormData) => {
   let data;
   try {
     data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: "Contact Form <contact@pierre-ide.fr>",
       to: "contact@pierre-ide.fr",
       subject: "Nouvelle demande de contact depuis PierrtfolioV2",
       reply_to: senderEmail,

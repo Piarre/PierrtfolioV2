@@ -2,10 +2,10 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { skillIconsData, skillsData } from "@/lib/data";
+import { skillIconsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import { getTheme, useTheme } from "@/context/theme-context";
+import { useTheme } from "@/context/theme-context";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -23,15 +23,15 @@ const fadeInAnimationVariants = {
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
-  const theme = getTheme();
+  const { theme } = useTheme();
 
   return (
     <section id="skills" ref={ref} className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">
       <SectionHeading>My skills &amp; knowledges</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-4 text-lg text-gray-800">
-        {skillIconsData.map((skill, index) => (
+      <ul className="flex flex-wrap justify-center gap-4 text-lg text-gray-800 group-hover">
+        {skillIconsData.split(",").map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-[#242938] dark:text-white/80"
+            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-[#242938] dark:text-white/80 group-hover:hover:scale-150"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
