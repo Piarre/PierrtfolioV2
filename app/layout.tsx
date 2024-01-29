@@ -24,7 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="!scroll-smooth">
       <head>
         <title>Pierre IDE</title>
-        <meta name="description" content="a 16 yo french dev." />
+        <meta name="description" content="a 16 yo french dev." />*
+        <meta name="robots" content="noindex,nofollow" />
+        <meta name="robots" content="all" />
       </head>
       <body
         className={`${dmsans.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
