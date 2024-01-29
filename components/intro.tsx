@@ -16,11 +16,7 @@ export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
-    <section
-      ref={ref}
-      id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
-    >
+    <section ref={ref} id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -70,9 +66,8 @@ export default function Intro() {
           ) * -1}{" "}
           yo
         </span>{" "}
-        french dev with <span className="font-bold">4 years</span> of
-        experience. I like to build <span className="italic">sites & apps</span>{" "}
-        that don't exist. <br /> My current focus is{" "}
+        french dev with <span className="font-bold">4 years</span> of experience. I like to build{" "}
+        <span className="italic">sites & apps</span> that don't exist. <br /> My current focus is{" "}
         <span className="underline italic">None</span>.
       </motion.h1>
 
@@ -84,7 +79,7 @@ export default function Intro() {
           delay: 0.1,
         }}
       >
-        <Link
+        {/* <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
@@ -92,9 +87,8 @@ export default function Intro() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
+          Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </Link> */}
 
         {/* <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
