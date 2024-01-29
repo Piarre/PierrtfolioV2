@@ -2,8 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import mozintImg from "@/public/mozint.png";
-import kitchenntteImg from "@/public/kitchennette.png";
+import { Project } from "./types";
 
 export const links = [
   {
@@ -14,10 +13,10 @@ export const links = [
     name: "About",
     hash: "#about",
   },
-  // {
-  //   name: "Projects",
-  //   hash: "#projects",
-  // },
+  {
+    name: "Projects",
+    hash: "#projects",
+  },
   {
     name: "Skills",
     hash: "#skills",
@@ -26,10 +25,10 @@ export const links = [
   //   name: "Experience",
   //   hash: "#experience",
   // },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
+  // {
+  //   name: "Contact",
+  //   hash: "#contact",
+  // },
 ] as const;
 
 export const experiencesData = [
@@ -72,20 +71,36 @@ export const experiencesData = [
   },
 ] as const;
 
-export const projectsData = [
+export const projectsData: Project[] = [
   {
-    title: "M-Ozint",
-    description:
-      "I worked on a full-stack WebApp, to help OSINTers and investigators to find information about people, companies, etc...",
-    tags: ["React", "Next.js", "GormDB", "Tailwind", "Flask", "Go", "ChakraUI"],
-    imageUrl: mozintImg,
+    title: "IDE",
+    description: "🚀 A personal CLI for me...",
+    link: [
+      {
+        name: "GitHub",
+        hash: "https://github.com/Piarre/TSMoji",
+      },
+      {
+        name: "Docs",
+        hash: "https://ide.piarre.app",
+      },
+    ],
+    tags: ["TypeScript", "CLI"],
   },
   {
-    title: "Kitchennette",
-    description:
-      "My mom had a damaged book with coffee on it and I decided to create a iOS app that save her recipes.",
-    tags: ["Switf", "SwitfUI", "Firebase"],
-    imageUrl: kitchenntteImg,
+    title: "TSMoji",
+    description: "🔥 Print ✨ emojis ✨ in TypeScript...",
+    link: [
+      {
+        name: "GitHub",
+        hash: "https://github.com/Piarre/TSMoji",
+      },
+      {
+        name: "Docs",
+        hash: "https://TSMoji.piarre.app",
+      },
+    ],
+    tags: ["TypeScript", "TSUP", "CLI"],
   },
 ] as const;
 
@@ -117,38 +132,5 @@ export const skillsData = [
   "Postman",
 ] as const;
 
-export const skillIconsData = [
-  "typescript",
-  "javascript",
-  "python",
-  "java",
-  "go",
-  "swift",
-  "powershell",
-  "bash",
-  "spring",
-  "vite",
-  "react",
-  "nextjs",
-  "tailwind",
-  "nodejs",
-  "vscode",
-  "visualstudio",
-  "ae",
-  "idea",
-  "androidstudio",
-  "blender",
-  "github",
-  "git",
-  // "discord",
-  // "bots",
-  "docker",
-  "electron",
-  "express",
-  "prisma",
-  "mongodb",
-  "linux",
-  "mysql",
-  "firebase",
-  "postman",
-] as const;
+export const skillIconsData =
+  "ts,js,go,powershell,swift,java,py,bash,spring,vite,react,nextjs,tailwind,nodejs,vscode,visualstudio,idea,androidstudio,github,git,docker,electron,express,linux,prisma,mongodb,mysql,firebase,postman";
