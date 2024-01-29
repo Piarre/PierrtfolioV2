@@ -102,7 +102,7 @@ export const projectsData: Project[] = [
     ],
     tags: ["TypeScript", "TSUP", "CLI"],
   },
-] as const;
+];
 
 export const skillsData = [
   "TypeScript",
