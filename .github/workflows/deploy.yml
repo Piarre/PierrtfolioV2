@@ -19,8 +19,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: 22
         script: |
-          pm2 stop Portfolio
           cd /var/www/
+          nvm install --lts
+          pm2 stop Portfolio
           rm -rf PierrtfolioV2
           git clone https://github.com/Piarre/PierrtfolioV2.git
           cd PierrtfolioV2
