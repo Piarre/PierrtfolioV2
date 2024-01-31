@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Deploy the last version of the website
+    runs-on: ubuntu-latest
+    steps:
+    - name: Connect to the server and deploy it
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        script: |
+          pm2 stop Portfolio
+          cd /var/www/
+          rm -rf PierrtfolioV2
+          git clone https://github.com/Piarre/PierrtfolioV2.git
+          cd PierrtfolioV2
+          npm i
+          npm run build
+          pm2 start Portfolio
