@@ -27,14 +27,6 @@ export default function Intro() {
               duration: 0.2,
             }}
           >
-            <Image
-              src={pierreJPG}
-              alt="Pierre portrait"
-              width="256"
-              height="256"
-              priority={true}
-              className="h-32 w-32 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-            />
           </motion.div>
 
           <motion.span
