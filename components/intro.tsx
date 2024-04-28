@@ -52,11 +52,7 @@ export default function Intro() {
       >
         <span className="font-bold text">Hello, I'm Pierre.</span> I'm a{" "}
         <span className="font-bold">
-          {dayjs("2007-04-20").diff(
-            `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`,
-            "years"
-          ) * -1}{" "}
-          yo
+          17 yo
         </span>{" "}
         french dev with <span className="font-bold">4 years</span> of experience. I like to build{" "}
         <span className="italic">sites & apps</span> that don't exist. <br /> My current focus is{" "}
